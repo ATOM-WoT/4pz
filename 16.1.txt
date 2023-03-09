@@ -1,0 +1,114 @@
+namespace WinFormsApp1
+{
+    public partial class Приложение : Form
+    {
+        public Приложение()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e) // кнопка пуск
+        {
+            string f = textBox1.Text;
+            int c = Convert.ToInt32(textBox2.Text);
+            int c1 = Convert.ToInt32(textBox3.Text);
+
+            dateTimePicker2.MaxDate = DateTime.Now;
+            DateTime dt1 = dateTimePicker2.Value;
+            DateTime dt2 = DateTime.Now;
+
+            int d = (dt2.Year - dt1.Year) * 365;
+            string s = "Вы " + f;
+            Вывод.Items.Add(s);
+
+            s = Convert.ToString(d);
+            s = "Вы прожили " + s + " дней";
+            Вывод.Items.Add(s);
+
+            s = Convert.ToString(c1);
+            s = "Вы хотите учиться еще " + s + " дней";
+            Вывод.Items.Add(s);
+
+            dt2 = dt2.AddDays(c1);  //расчёт, через сколько времени человек станет умным 
+            s = "Вы станете очень умным " + dt2;
+            Вывод.Items.Add(s);
+
+            s = Convert.ToString(dt1.DayOfWeek);
+            s = "Это будет в " + s;
+            Вывод.Items.Add(s);
+
+            s = "Если не все поняли, подучите английский";
+            Вывод.Items.Add(s);
+
+            int year = Convert.ToInt32(textBox1.Text);
+            int day = Convert.ToInt32(textBox2.Text);
+            DateTime date = new DateTime();
+            date = date.AddYears(year - 1).AddDays(day - 1);
+            label1.Text = date.ToString("dd MMMM");
+
+        }
+        private void button2_Click(object sender, EventArgs e) // проверка года на высокосность
+        {
+            int year = Convert.ToInt32(textBox3.Text);
+            if (DateTime.IsLeapYear(year))
+            {
+                MessageBox.Show("Год весокосный", "ГОД", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Год не весокосный", "ГОД", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e) // час рождения
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e) // фамилия
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e) // сегодняшняя дата 
+        {
+
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e) // дата рождения 
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e) // остаток, дней учиться
+        {
+
+        }
+
+        private void Вывод_SelectedIndexChanged(object sender, EventArgs e) // вывод информации 
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
